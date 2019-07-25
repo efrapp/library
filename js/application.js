@@ -12,18 +12,17 @@ function addBookToLibrary(author, title, pages, read) {
       author: 'Ricardo Peña Marí',
       title: "Design's Programms",
       pages: 466,
-      read: false
+      read: false,
     },
     {
       author: 'Norton Juster',
       title: 'The Phantom Tollbooth',
       pages: 255,
-      read: true
-    }
+      read: true,
+    },
   ];
 
-  sampleBooks.forEach(b => {
+  sampleBooks.forEach((b) => {
     addBookToLibrary(b.author, b.title, b.pages, b.read);
   });
-  console.log(myLibrary);
 })();
