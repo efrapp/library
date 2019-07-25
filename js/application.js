@@ -1,10 +1,8 @@
-'use strict'
+const myLibrary = [];
 
-const myLibrary = []
-
-function addBookToLibrary (author, title, pages, read) {
-  const book = new Book(author, title, pages, read)
-  myLibrary.push(book)
+function addBookToLibrary(author, title, pages, read) {
+  const book = new Book(author, title, pages, read);
+  myLibrary.push(book);
 }
 
 (() => {
@@ -22,10 +20,10 @@ function addBookToLibrary (author, title, pages, read) {
       pages: 255,
       read: true
     }
-  ]
+  ];
 
   sampleBooks.forEach(b => {
-    addBookToLibrary(b.author, b.title, b.pages, b.read)
-  })
-  console.log(myLibrary)
-})()
+    addBookToLibrary(b.author, b.title, b.pages, b.read);
+  });
+  console.log(myLibrary);
+})();
