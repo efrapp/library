@@ -4,17 +4,74 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
     <title>Library App</title>
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection">
+    <link type="text/css" rel="stylesheet" href="css/application.css">
   </head>
   <body>
-      <div class="container">
-          <h1 class="teal-text darken-1 center"> Bookstore </h1>
+    <div class="container">
+      <h1 class="teal-text darken-1 center"> Bookstore </h1>
+      <!-- Books -->
+      <div class="row books">
+        <script id="book-template" type="text/x-handlebars-template">
+          {{#each books}}
+            <div class="col s12 m3">
+              <div class="card">
+                <div class="card-image">
+                  <img class="book-cover" src="{{cover}}">
+                  <div class="book-menu-container">
+                    <div class="fixed-action-btn book-menu-btn horizontal direction-top">
+                        <a class="btn-floating btn-large red">
+                          <i class="large material-icons">menu</i>
+                        </a>
+                        <ul>
+                          <li>
+                            <a class="btn-floating red">
+                              <i class="material-icons">delete</i>
+                            </a>
+                          </li>
+                          <li>
+                              <a class="btn-floating blue">
+                                <i class="material-icons">bookmark</i>
+                              </a>
+                            </li>
+                        </ul>
+                    </div> 
+                  </div>                 
+                </div>
+                <div class="card-content">
+                  <span class="card-title activator grey-text text-darken-4">{{title}}<i class="material-icons right">more_vert</i></span>
+                </div>
+                <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-4">{{title}}<i class="material-icons right">close</i></span>
+                    <p><b> Author </b></p>
+                    <p>{{author}}</p>
+                    <p><b> Pages </b></p>
+                    <p>{{pages}}</p>
+                    <p><b> Read? </b></p>
+                    <p>{{read}}</p>
+                </div>
+              </div>
+            </div>
+          {{/each}}
+        </script>
       </div>
-
+    </div>
+    <div>Icons made by 
+      <a href="https://www.flaticon.com/authors/popcorns-arts" title="Icon Pond">Icon Pond</a>
+      from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+      is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a>
+    </div>
     <script type="text/javascript" src="js/materialize.min.js" ></script>
+    <script type="text/javascript" src="js/handlebars-v4.1.2.js"></script>
     <script type="text/javascript" src="js/book.js"></script>
+    <script type="text/javascript" src="js/events.js"></script>
     <script type="text/javascript" src="js/application.js"></script>
   </body>
 </html>
