@@ -15,8 +15,14 @@
                   </a>
                 </li>
                 <li>
-                    <a class="btn-floating blue">
-                      <i class="material-icons">bookmark</i>
+                    <a class="btn-floating blue tooltipped update-read" data-position="top" data-tooltip="Read?">
+                      <i class="material-icons" value="{{@index}}">
+                        {{#if read}}
+                          check_box
+                        {{else}}
+                          check_box_outline_blank
+                        {{/if}}
+                      </i>
                     </a>
                   </li>
               </ul>
@@ -33,7 +39,13 @@
           <p><b> Pages </b></p>
           <p>{{pages}}</p>
           <p><b> Read? </b></p>
-          <p>{{read}}</p>
+          <p>
+            {{#if read}}
+              Yes
+            {{else}}
+              No
+            {{/if}}
+          </p>
       </div>
     </div>
   </div>

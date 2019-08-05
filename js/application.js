@@ -15,10 +15,17 @@ function render() {
   destination.innerHTML = html;
   initFAB();
   btnRemoveEvent();
+  btnUpdateStatusEvent();
 }
 
 function removeBookFromLibrary(bIndex) {
   myLibrary.splice(bIndex, 1);
+  render();
+}
+
+function updateReadStatus(bIndex) {
+  const book = myLibrary[bIndex];
+  book.read = !book.read;
   render();
 }
 
