@@ -6,16 +6,23 @@ function addBookToLibrary(author, title, pages, isbn, read) {
 }
 
 function render() {
-  const source = document.querySelector('#book-template').innerHTML;
-  const template = Handlebars.compile(source);
+  // const source = document.querySelector('#book-template').innerHTML;
+  // const template = Handlebars.compile(source);
   const context = { books: myLibrary };
-  const html = template(context);
+  const html = Handlebars.templates.book(context);
   const destination = document.querySelector('.books');
 
   destination.innerHTML = html;
-
-  return destination.innerHTML;
+  initFAB();
+  btnRemoveEvent();
 }
+
+function removeBookFromLibrary(bIndex) {
+  myLibrary.splice(bIndex, 1);
+  render();
+}
+
+// document.getElementById('remove-book').onclick = removeBook;
 
 (() => {
   // Create 2 sample books
