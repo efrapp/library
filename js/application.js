@@ -9,10 +9,13 @@ function addBookToLibrary(author, title, pages, isbn, read) {
 function createNewBook() {
   const form = document.getElementById('newBook');
   if (form.elements.author.value === '') {
+    // eslint-disable-next-line no-undef
     M.toast({ html: 'Please fill the Author information' });
   } else if (form.elements.title.value === '') {
+    // eslint-disable-next-line no-undef
     M.toast({ html: 'Please fill the Title information' });
   } else if (form.elements.pages.value === '') {
+    // eslint-disable-next-line no-undef
     M.toast({ html: 'Please fill the Pages information' });
   } else {
     addBookToLibrary(
@@ -29,6 +32,11 @@ function createNewBook() {
 }
 
 document.getElementById('save').onclick = createNewBook;
+
+document.addEventListener('DOMContentLoaded', () => {
+  const elems = document.querySelectorAll('.modal');
+  M.Modal.init(elems);
+});
 
 (() => {
   // Create 2 sample books

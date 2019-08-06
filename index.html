@@ -11,51 +11,56 @@
   <body>
       <div class="container">
         <h1 class="teal-text darken-1 center"> Bookstore </h1>
-        <h4 class="teal-text darken-1">
-          Create New Book
-        </h4>
-        <div class="row">
-          <form class="col s12" id="newBook">
+        <a class="waves-effect waves-light btn btn-large right modal-trigger" href="#modal1">Add Book</a>
+        <div id="modal1" class="modal">
+          <div class="modal-content">
+            <h4 class="teal-text darken-1">
+              Create New Book
+            </h4>
             <div class="row">
-              <div class="input-field col s6">
-                <input type="text" name="author" class="validate" required="required" aria-required="true">
-                <label for="author"> Author </label>
-                <span class="helper-text" data-error="Can't be empty"> Required </span>
-              </div>
-              <div class="input-field col s6">
-                <input type="text" name="title" class="validate" required="required" aria-required="true">
-                <label for="title"> Title </label>
-                <span class="helper-text" data-error="Can't be empty"> Required </span>
-              </div>
+              <form class="col s12" id="newBook">
+                <div class="row">
+                  <div class="input-field col s6">
+                    <input type="text" name="author" class="validate" required="required" aria-required="true">
+                    <label for="author"> Author </label>
+                    <span class="helper-text" data-error="Can't be empty"> Required </span>
+                  </div>
+                  <div class="input-field col s6">
+                    <input type="text" name="title" class="validate" required="required" aria-required="true">
+                    <label for="title"> Title </label>
+                    <span class="helper-text" data-error="Can't be empty"> Required </span>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s6">
+                    <input type="number" name="pages" class="validate" required="required" aria-required="true">
+                    <label for="pages"> Pages </label>
+                    <span class="helper-text" data-error="Can't be empty"> Required </span>
+                  </div>
+                  <div class="input-field col s6">
+                    <input placeholder="0771595158" type="number" name="isbn" value="0">
+                    <label class="active" for="isbn"> ISBN </label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <label>
+                      <input type="checkbox" name="read">
+                      <span> Read? </span>
+                    </label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <button class="waves-effect wave-light btn-large right" type="button" id="save">
+                      <i class="material-icons right">send</i>
+                      Save
+                    </button>
+                  </div>
+                </div>
+              </form>
             </div>
-            <div class="row">
-              <div class="input-field col s6">
-                <input type="number" name="pages" class="validate" required="required" aria-required="true">
-                <label for="pages"> Pages </label>
-                <span class="helper-text" data-error="Can't be empty"> Required </span>
-              </div>
-              <div class="input-field col s6">
-                <input placeholder="0771595158" type="number" name="isbn" value="0">
-                <label class="active" for="isbn"> ISBN </label>
-              </div>
-            </div>
-            <div class="row">
-              <div class="input-field col s12">
-                <label>
-                  <input type="checkbox" name="read">
-                  <span> Read? </span>
-                </label>
-              </div>
-            </div>
-            <div class="row">
-              <div class="input-field col s12">
-                <button class="waves-effect wave-light btn-large right" type="button" id="save">
-                  <i class="material-icons right">send</i>
-                  Save
-                </button>
-              </div>
-            </div>
-          </form>
+          </div>
         </div>
       </div>
 
