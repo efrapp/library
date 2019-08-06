@@ -45,7 +45,9 @@ function createNewBook() {
       form.elements.read.checked,
     );
     form.reset();
+    // eslint-disable-next-line no-undef
     M.updateTextFields();
+    // eslint-disable-next-line no-undef
     M.toast({ html: 'Book created!' });
   }
 }
@@ -87,6 +89,7 @@ document.addEventListener('resetcomponents', () => {
 
 document.addEventListener('DOMContentLoaded', () => {
   const elems = document.querySelectorAll('.modal');
+  // eslint-disable-next-line no-undef
   M.Modal.init(elems);
 });
 
@@ -95,6 +98,7 @@ document.getElementById('save').addEventListener('click', () => {
   render();
 });
 
+// eslint-disable-next-line no-undef
 Handlebars.registerHelper('truncate', (str, len) => {
   if (str.length > len) {
     let newStr = str.substr(0, len + 1);
@@ -112,6 +116,7 @@ Handlebars.registerHelper('truncate', (str, len) => {
       newStr = str.substr(0, len);
     }
 
+    // eslint-disable-next-line no-undef
     return new Handlebars.SafeString(`${newStr}...`);
   }
   return str;

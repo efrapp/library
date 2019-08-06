@@ -19,7 +19,6 @@ export default class Book {
       .then(response => response.json())
       .then((body) => {
         if (body.totalItems > 0) {
-          // console.log(JSON.stringify(body.items[0].volumeInfo.imageLinks.thumbnail));
           return Promise.resolve(body.items[0].volumeInfo.imageLinks.thumbnail);
         }
         return Promise.resolve('img/default_cover.jpg');
