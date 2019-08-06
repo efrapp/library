@@ -13,7 +13,7 @@ templates['book'] = template({"1":function(container,depth0,helpers,partials,dat
     + "\">\n"
     + ((stack1 = helpers["if"].call(alias1,(depth0 != null ? depth0.read : depth0),{"name":"if","hash":{},"fn":container.program(2, data, 0),"inverse":container.program(4, data, 0),"data":data})) != null ? stack1 : "")
     + "                      </i>\n                    </a>\n                  </li>\n              </ul>\n          </div> \n        </div>                 \n      </div>\n      <div class=\"card-content\">\n        <span class=\"card-title activator grey-text text-darken-4\">"
-    + alias4(((helper = (helper = helpers.title || (depth0 != null ? depth0.title : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"title","hash":{},"data":data}) : helper)))
+    + alias4((helpers.truncate || (depth0 && depth0.truncate) || alias2).call(alias1,(depth0 != null ? depth0.title : depth0),10,{"name":"truncate","hash":{},"data":data}))
     + "<i class=\"material-icons right\">more_vert</i></span>\n      </div>\n      <div class=\"card-reveal\">\n          <span class=\"card-title grey-text text-darken-4\">"
     + alias4(((helper = (helper = helpers.title || (depth0 != null ? depth0.title : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"title","hash":{},"data":data}) : helper)))
     + "<i class=\"material-icons right\">close</i></span>\n          <p><b> Author </b></p>\n          <p>"

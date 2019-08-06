@@ -95,6 +95,28 @@ document.getElementById('save').addEventListener('click', () => {
   render();
 });
 
+Handlebars.registerHelper('truncate', (str, len) => {
+  if (str.length > len) {
+    let newStr = str.substr(0, len + 1);
+
+    while (newStr.length) {
+      const ch = newStr.substr(-1);
+      newStr = newStr.substr(0, -1);
+
+      if (ch === ' ') {
+        break;
+      }
+    }
+
+    if (newStr === '') {
+      newStr = str.substr(0, len);
+    }
+
+    return new Handlebars.SafeString(`${newStr}...`);
+  }
+  return str;
+});
+
 (() => {
   // Create 2 sample books
   const sampleBooks = [
