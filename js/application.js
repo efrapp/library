@@ -1,35 +1,64 @@
+// eslint-disable-next-line import/extensions
+import Book from './book.js';
+
 const myLibrary = [];
+
+function initFAB() {
+  const elems = document.querySelectorAll('.fixed-action-btn');
+  // eslint-disable-next-line no-undef
+  M.FloatingActionButton.init(elems, {
+    direction: 'left',
+  });
+}
 
 function addBookToLibrary(author, title, pages, isbn, read) {
   const book = new Book(author, title, pages, isbn, read);
   myLibrary.push(book);
 }
 
-function render() {
-  // const source = document.querySelector('#book-template').innerHTML;
-  // const template = Handlebars.compile(source);
-  const context = { books: myLibrary };
-  const html = Handlebars.templates.book(context);
-  const destination = document.querySelector('.books');
-
-  destination.innerHTML = html;
-  initFAB();
-  btnRemoveEvent();
-  btnUpdateStatusEvent();
-}
-
 function removeBookFromLibrary(bIndex) {
   myLibrary.splice(bIndex, 1);
-  render();
 }
 
 function updateReadStatus(bIndex) {
   const book = myLibrary[bIndex];
   book.read = !book.read;
-  render();
 }
 
-// document.getElementById('remove-book').onclick = removeBook;
+function render() {
+  const context = { books: myLibrary };
+  // eslint-disable-next-line no-undef
+  const html = Handlebars.templates.book(context);
+  const destination = document.querySelector('.books');
+
+  destination.innerHTML = html;
+  const event = new CustomEvent('resetcomponents');
+  document.dispatchEvent(event);
+}
+
+function btnRemoveEvent() {
+  document.querySelectorAll('.remove-book').forEach((el) => {
+    el.addEventListener('click', (e) => {
+      removeBookFromLibrary(e.target.getAttribute('value'));
+      render();
+    });
+  });
+}
+
+function btnUpdateStatusEvent() {
+  document.querySelectorAll('.update-read').forEach((el) => {
+    el.addEventListener('click', (e) => {
+      updateReadStatus(e.target.getAttribute('value'));
+      render();
+    });
+  });
+}
+
+document.addEventListener('resetcomponents', () => {
+  initFAB();
+  btnRemoveEvent();
+  btnUpdateStatusEvent();
+});
 
 (() => {
   // Create 2 sample books
@@ -49,10 +78,10 @@ function updateReadStatus(bIndex) {
       read: true,
     },
   ];
-  // console.log(sampleBooks);
+
   sampleBooks.forEach((b) => {
     addBookToLibrary(b.author, b.title, b.pages, b.isbn, b.read);
   });
-  console.log(myLibrary);
+
   render();
 })();

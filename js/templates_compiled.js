@@ -1,3 +1,4 @@
+/* eslint-disable */
 (function() {
   var template = Handlebars.template, templates = Handlebars.templates = Handlebars.templates || {};
 templates['book'] = template({"1":function(container,depth0,helpers,partials,data) {

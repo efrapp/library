@@ -1,4 +1,4 @@
-class Book {
+export default class Book {
   constructor(author, title, pages, isbn, read) {
     this.author = author;
     this.title = title;
@@ -24,10 +24,9 @@ class Book {
         }
         return Promise.resolve('img/default_cover.jpg');
       });
-    console.log(result);
+
     result.then((coverPath) => {
       this.coverPath = coverPath;
     });
-    // this.coverPath = 'img/default_cover.jpg';
   }
 }
