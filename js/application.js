@@ -25,6 +25,31 @@ function updateReadStatus(bIndex) {
   book.read = !book.read;
 }
 
+function createNewBook() {
+  const form = document.getElementById('newBook');
+  if (form.elements.author.value === '') {
+    // eslint-disable-next-line no-undef
+    M.toast({ html: 'Please fill the Author information' });
+  } else if (form.elements.title.value === '') {
+    // eslint-disable-next-line no-undef
+    M.toast({ html: 'Please fill the Title information' });
+  } else if (form.elements.pages.value === '') {
+    // eslint-disable-next-line no-undef
+    M.toast({ html: 'Please fill the Pages information' });
+  } else {
+    addBookToLibrary(
+      form.elements.author.value,
+      form.elements.title.value,
+      parseInt(form.elements.pages.value, 10),
+      parseInt(form.elements.isbn.value, 10),
+      form.elements.read.checked,
+    );
+    form.reset();
+    M.updateTextFields();
+    M.toast({ html: 'Book created!' });
+  }
+}
+
 function render() {
   const context = { books: myLibrary };
   // eslint-disable-next-line no-undef
@@ -58,6 +83,16 @@ document.addEventListener('resetcomponents', () => {
   initFAB();
   btnRemoveEvent();
   btnUpdateStatusEvent();
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  const elems = document.querySelectorAll('.modal');
+  M.Modal.init(elems);
+});
+
+document.getElementById('save').addEventListener('click', () => {
+  createNewBook();
+  render();
 });
 
 (() => {
