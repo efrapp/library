@@ -37,13 +37,11 @@ function createNewBook() {
     // eslint-disable-next-line no-undef
     M.toast({ html: 'Please fill the Pages information' });
   } else {
-    addBookToLibrary(
-      form.elements.author.value,
+    addBookToLibrary(form.elements.author.value,
       form.elements.title.value,
       parseInt(form.elements.pages.value, 10),
       parseInt(form.elements.isbn.value, 10),
-      form.elements.read.checked,
-    );
+      form.elements.read.checked);
     form.reset();
     // eslint-disable-next-line no-undef
     M.updateTextFields();
