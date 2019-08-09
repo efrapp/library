@@ -1,0 +1,37 @@
+{
+  "name": "library",
+  "version": "1.0.0",
+  "description": "Javascript mini app to simulate basic usage of a bookstore",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/efrapp/library.git"
+  },
+  "author": "Efrain",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/efrapp/library/issues"
+  },
+  "homepage": "https://github.com/efrapp/library#readme",
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb": "^17.1.1",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-config-standard": "^13.0.1",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-node": "^9.1.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.14.3",
+    "eslint-plugin-standard": "^4.0.0",
+    "http-server": "^0.11.1",
+    "prettier": "1.18.2"
+  },
+  "dependencies": {
+    "handlebars": "^4.1.2"
+  }
+}
