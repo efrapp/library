@@ -11,7 +11,13 @@ The idea with this project is to applied the ES6 syntax and the classes approach
 
 ## Install
   1. Clone the repository in a local folder
-  2. Navigate to folder project and open the `index.html` file in the browser. You can use a ready-to-use web server like [`http-server`](https://www.npmjs.com/package/http-server) to test the project right away.
+  2. Install an http server *[this step is needed in order the application runs]*
+  3. Navigate to the url specefied by the server
+
+### Install [`http-server`](https://www.npmjs.com/package/http-server) server
+  1. install the server using: `npm install http-server -g`
+  2. Run the server in the console with `http-server` and check the url the server will listen to
+  3. In the browser go to the url provided by `http-server`, normally it is `http://127.0.0.1:8080/`
   
 ## Usage
 
