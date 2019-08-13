@@ -1,0 +1,14 @@
+.book-cover {
+  height: 318px;
+}
+
+.book-menu-container {
+  position: relative;
+}
+
+.book-menu-btn {
+  position: absolute;
+  bottom: -20px;
+  right: 10px;
+  z-index: 0;
+}

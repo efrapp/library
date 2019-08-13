@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Library App</title>
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection">
+    <link type="text/css" rel="stylesheet" href="css/application.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="teal-text darken-1 center"> Bookstore </h1>
+      <!-- Books -->
+      <div class="row books">
+        <!-- Content loaded with Handlebars -->
+      </div>
+      <div class="row">
+        <div class="col s12">
+          <a class="waves-effect waves-light btn btn-large right modal-trigger" href="#modal1">Add Book</a>
+        </div>
+      </div>
+      
+      <div id="modal1" class="modal">
+        <div class="modal-content">
+          <h4 class="teal-text darken-1">
+            Create New Book
+          </h4>
+          <div class="row">
+            <form class="col s12" id="newBook">
+              <div class="row">
+                <div class="input-field col s6">
+                  <input type="text" name="author" class="validate" required="required" aria-required="true">
+                  <label for="author"> Author </label>
+                  <span class="helper-text" data-error="Can't be empty"> Required </span>
+                </div>
+                <div class="input-field col s6">
+                  <input type="text" name="title" class="validate" required="required" aria-required="true">
+                  <label for="title"> Title </label>
+                  <span class="helper-text" data-error="Can't be empty"> Required </span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s6">
+                  <input type="number" name="pages" class="validate" required="required" aria-required="true">
+                  <label for="pages"> Pages </label>
+                  <span class="helper-text" data-error="Can't be empty"> Required </span>
+                </div>
+                <div class="input-field col s6">
+                  <input placeholder="0771595158" type="number" name="isbn" value="0">
+                  <label class="active" for="isbn"> ISBN </label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <label>
+                    <input type="checkbox" name="read">
+                    <span> Read? </span>
+                  </label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <button class="waves-effect wave-light btn-large right" type="button" id="save">
+                    <i class="material-icons right">send</i>
+                    Save
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>Favicon made by 
+      <a href="https://www.flaticon.com/authors/popcorns-arts" title="Icon Pond">Icon Pond</a>
+      from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+      is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a>
+    </div>
+
+    <script type="text/javascript" src="js/materialize.min.js" ></script>
+    <script type="text/javascript" src="js/handlebars.runtime-v4.1.2.js"></script>
+    <script type="text/javascript" src="js/templates_compiled.js"></script>
+    <script type="module" src="js/application.js"></script>
+  </body>
+</html>

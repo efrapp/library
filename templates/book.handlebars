@@ -1,0 +1,52 @@
+{{#each books}}
+  <div class="col s12 m3">
+    <div class="card">
+      <div class="card-image">
+        <img class="book-cover" src="{{cover}}">
+        <div class="book-menu-container">
+          <div class="fixed-action-btn book-menu-btn horizontal direction-top">
+              <a class="btn-floating btn-large red">
+                <i class="large material-icons">menu</i>
+              </a>
+              <ul>
+                <li>
+                  <a class="btn-floating red remove-book">
+                    <i class="material-icons" value="{{@index}}">delete</i>
+                  </a>
+                </li>
+                <li>
+                    <a class="btn-floating blue tooltipped update-read" data-position="top" data-tooltip="Read?">
+                      <i class="material-icons" value="{{@index}}">
+                        {{#if read}}
+                          check_box
+                        {{else}}
+                          check_box_outline_blank
+                        {{/if}}
+                      </i>
+                    </a>
+                  </li>
+              </ul>
+          </div> 
+        </div>                 
+      </div>
+      <div class="card-content">
+        <span class="card-title activator grey-text text-darken-4">{{truncate title 10}}<i class="material-icons right">more_vert</i></span>
+      </div>
+      <div class="card-reveal">
+          <span class="card-title grey-text text-darken-4">{{title}}<i class="material-icons right">close</i></span>
+          <p><b> Author </b></p>
+          <p>{{author}}</p>
+          <p><b> Pages </b></p>
+          <p>{{pages}}</p>
+          <p><b> Read? </b></p>
+          <p>
+            {{#if read}}
+              Yes
+            {{else}}
+              No
+            {{/if}}
+          </p>
+      </div>
+    </div>
+  </div>
+{{/each}}
